@@ -98,28 +98,7 @@ def handle_message(event):
         return 0  
     
 ###############################################################################
-           elif user_message.find('單人') != -1 :         #判斷用戶使否傳來"單人"關鍵字，若為是則觸發本區段。  
-        
-        res_message = TemplateSendMessage(
-            alt_text='本訊息為【單人價位】',
-            template=ConfirmTemplate(
-                text='大約張數？',
-                actions=[
-                    MessageTemplateAction(
-                        label='是',
-                        text='單人'
-                    ),
-                    MessageTemplateAction(
-                        label='雙人',
-                        text='雙人'
-                    )
-                ]
-            )
-        )
-        
-        line_bot_api.reply_message(event.reply_token,res_message)
-        return 0  
-        
+
 ###############################################################################
         #user_message='音訊訊息'
     elif user_message.find('音訊訊息') != -1:         #判斷用戶使否傳來"音訊訊息"關鍵字，若為是則觸發本區段。 
