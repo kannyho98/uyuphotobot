@@ -86,7 +86,7 @@ def handle_message(event):
                             ),
                             MessageTemplateAction(
                                 label='INSTAGRAM',
-                                text='UYUNISHINO'
+                                uri='https://www.instagram.com/uyunishino_
                             ),
                         ]
                     ),                                          
@@ -104,10 +104,6 @@ def handle_message(event):
                                 label='確認介面訊息',
                                 text='確認介面訊息'
                             ),
-                            MessageTemplateAction(
-                                label='輪播模板訊息',
-                                text='輪播模板訊息'
-                            ),
                         ]
                     ),                                          
 # =============================================================================
@@ -123,10 +119,6 @@ def handle_message(event):
                             URITemplateAction(
                                 label='Line官方說明文件',
                                 uri='https://developers.line.biz/zh-hant/docs/messaging-api/message-types/#common-features'
-                            ),
-                            MessageTemplateAction(
-                                label='其他',
-                                text='教材尚在開發中'
                             ),
                         ]
                     ),                                          
