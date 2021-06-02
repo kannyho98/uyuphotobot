@@ -148,9 +148,25 @@ def handle_message(event):
         
 ###############################################################################
         #user_message='文字訊息'
-    elif user_message.find('文字訊息') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+    elif user_message.find('服務類型') != -1:        
         
-        res_message = TextSendMessage(text='歡迎使用文藻E點通，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
+        res_message = TemplateSendMessage(
+            alt_text='本訊息為【服務類型】',
+            template=ConfirmTemplate(
+                text='需要的服務類型？',
+                actions=[
+                    MessageTemplateAction(
+                        label='人像拍攝',
+                        text='人像拍攝'
+                    ),
+                    MessageTemplateAction(
+                        label='商業拍攝',
+                        text='商業拍攝'
+                    )
+                ]
+            )
+        )
+            
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
         
