@@ -59,42 +59,34 @@ def handle_message(event):
             template = CarouselTemplate(
                 columns=[
 #-----------------------------------------------------------------------------                    
-                    CarouselColumn(
+                   CarouselColumn(
                         # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
+                        title='報價',
+                        text='請選擇你需要的服務',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息',
-                                text='文字訊息'
+                                label='人像拍攝',
+                                text='人像拍攝'
                             ),
                             MessageTemplateAction(
-                                label='圖片訊息',
-                                text='圖片訊息'
-                            ),
-                            MessageTemplateAction(
-                                label='影片訊息',
-                                text='影片訊息'
+                                label='商業拍攝',
+                                text='商業拍攝'
                             ),
                         ]
-                    ),                                          
+                    ),                                                           
 # =============================================================================
                     CarouselColumn(
                         # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
+                        title='介紹',
+                        text='請由下方選出你需要的！',
                         actions=[
                             MessageTemplateAction(
-                                label='音訊訊息',
-                                text='音訊訊息'
+                                label='簡介',
+                                text='簡介'
                             ),
                             MessageTemplateAction(
-                                label='位置訊息',
-                                text='位置訊息'
-                            ),
-                            MessageTemplateAction(
-                                label='貼圖訊息',
-                                text='貼圖訊息'
+                                label='INSTAGRAM',
+                                text='UYUNISHINO'
                             ),
                         ]
                     ),                                          
