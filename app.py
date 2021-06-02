@@ -155,9 +155,9 @@ def handle_message(event):
                     MessageTemplateAction(
                         label='商業拍攝',
                         text='商業拍攝'
-                       ）
+                    ),
                      ]
-                  ）
+            ),
                         
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
