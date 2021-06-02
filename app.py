@@ -88,44 +88,8 @@ def handle_message(event):
                                 label='INSTAGRAM',
                                 uri='https://www.instagram.com/uyunishino_'
                             ),
-                        ]
-                    ),                                          
-# =============================================================================
-                    CarouselColumn(
-                        # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
-                        actions=[
-                            MessageTemplateAction(
-                                label='按鈕介面訊息',
-                                text='按鈕介面訊息'
-                            ),
-                            MessageTemplateAction(
-                                label='確認介面訊息',
-                                text='確認介面訊息'
-                            ),
-                        ]
-                    ),                                          
-# =============================================================================
-                    CarouselColumn(
-                        # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
-                        actions=[
-                            MessageTemplateAction(
-                                label='輪播圖模板訊息',
-                                text='輪播圖模板訊息'
-                            ),
-                            URITemplateAction(
-                                label='Line官方說明文件',
-                                uri='https://developers.line.biz/zh-hant/docs/messaging-api/message-types/#common-features'
-                            ),
-                        ]
-                    ),                                          
-# =============================================================================        
                  ]            
             )
-        )
         
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
