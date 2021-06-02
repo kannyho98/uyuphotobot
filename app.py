@@ -49,7 +49,103 @@ def handle_message(event):
     nameid = profile.display_name     #使用者名稱
     uid = profile.user_id             #使用者ID  
     user_message=str(event.message.text) 
+    
 
+        #user_message='圖文訊息'
+    if user_message.find('圖文訊息') != -1:    
+        
+        res_message = TemplateSendMessage(
+            alt_text='圖文訊息',
+            template = CarouselTemplate(
+                columns=[
+#-----------------------------------------------------------------------------                    
+                    CarouselColumn(
+                        # thumbnail_image_url='',
+                        title='圖文訊息選單',
+                        text='請由下方選出您想測試的訊息格式！',
+                        actions=[
+                            MessageTemplateAction(
+                                label='文字訊息',
+                                text='文字訊息'
+                            ),
+                            MessageTemplateAction(
+                                label='圖片訊息',
+                                text='圖片訊息'
+                            ),
+                            MessageTemplateAction(
+                                label='影片訊息',
+                                text='影片訊息'
+                            ),
+                        ]
+                    ),                                          
+# =============================================================================
+                    CarouselColumn(
+                        # thumbnail_image_url='',
+                        title='圖文訊息選單',
+                        text='請由下方選出您想測試的訊息格式！',
+                        actions=[
+                            MessageTemplateAction(
+                                label='音訊訊息',
+                                text='音訊訊息'
+                            ),
+                            MessageTemplateAction(
+                                label='位置訊息',
+                                text='位置訊息'
+                            ),
+                            MessageTemplateAction(
+                                label='貼圖訊息',
+                                text='貼圖訊息'
+                            ),
+                        ]
+                    ),                                          
+# =============================================================================
+                    CarouselColumn(
+                        # thumbnail_image_url='',
+                        title='圖文訊息選單',
+                        text='請由下方選出您想測試的訊息格式！',
+                        actions=[
+                            MessageTemplateAction(
+                                label='按鈕介面訊息',
+                                text='按鈕介面訊息'
+                            ),
+                            MessageTemplateAction(
+                                label='確認介面訊息',
+                                text='確認介面訊息'
+                            ),
+                            MessageTemplateAction(
+                                label='輪播模板訊息',
+                                text='輪播模板訊息'
+                            ),
+                        ]
+                    ),                                          
+# =============================================================================
+                    CarouselColumn(
+                        # thumbnail_image_url='',
+                        title='圖文訊息選單',
+                        text='請由下方選出您想測試的訊息格式！',
+                        actions=[
+                            MessageTemplateAction(
+                                label='輪播圖模板訊息',
+                                text='輪播圖模板訊息'
+                            ),
+                            URITemplateAction(
+                                label='Line官方說明文件',
+                                uri='https://developers.line.biz/zh-hant/docs/messaging-api/message-types/#common-features'
+                            ),
+                            MessageTemplateAction(
+                                label='其他',
+                                text='教材尚在開發中'
+                            ),
+                        ]
+                    ),                                          
+# =============================================================================        
+                 ]            
+            )
+        )
+        
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0   
+        
 ###############################################################################
         #user_message='文字訊息'
     elif user_message.find('服務類型') != -1:        
@@ -75,30 +171,31 @@ def handle_message(event):
         return 0   
         
 ###############################################################################
-    elif user_message.find('人像拍攝種類') != -1 :         #判斷用戶使否傳來"圖片訊息"關鍵字，若為是則觸發本區段。  
+    elif user_message.find('圖片訊息') != -1 :         #判斷用戶使否傳來"圖片訊息"關鍵字，若為是則觸發本區段。  
         
-        res_message = TemplateSendMessage(
-            alt_text='本訊息為【人像拍攝種類】',
-            template=ConfirmTemplate(
-                text='人數？',
-                actions=[
-                    MessageTemplateAction(
-                        label='單人',
-                        text='單人'
-                    ),
-                    MessageTemplateAction(
-                        label='雙人',
-                        text='雙人'
-                    )
-                ]
-            )
+        res_message = ImageSendMessage(
+            original_content_url='https://cdn2.ettoday.net/images/3053/3053944.jpg',
+            preview_image_url='https://cdn2.ettoday.net/images/3053/3053944.jpg'
         )
-        
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0  
     
 ###############################################################################
+<<<<<<< HEAD
 
+=======
+        #user_message='影片訊息'
+    elif user_message.find('影片訊息') != -1:         #判斷用戶使否傳來"影片訊息"關鍵字，若為是則觸發本區段。 
+        
+        res_message = VideoSendMessage(
+            original_content_url='https://r5---sn-npoe7n7r.googlevideo.com/videoplayback?expire=1612879931&ei=20MiYIfkBIyWiwTEhrSQBQ&ip=144.202.56.145&id=o-ANCIwAp79OWJyLwTkkaRuKvMzGSf6gsljTB-wPAcLNh5&itag=22&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=6LcWIDtZWbxjYUXS1Dod_vIF&ratebypass=yes&dur=328.423&lmt=1572331630804319&fvip=5&c=WEB&txp=2216222&n=fRjt_f_oTJeD95i&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAMXkWqUW9UIIMrcCJZ8dh_xZ7nWpUlNVWd4sdw2JHME4AiAKGxqLL5z6kL30RkfuW-mCUVIwWmqG1nPPOo0_PbecxA%3D%3D&redirect_counter=1&cm2rm=sn-vgqe7s76&req_id=3b1b213d3dba3ee&cms_redirect=yes&mh=ww&mip=182.234.79.223&mm=34&mn=sn-npoe7n7r&ms=ltu&mt=1612858827&mv=m&mvi=5&pl=18&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgXT3f533nuXNJnQlehCh9ePDKFQtHpmkoWKAN1IzsJsgCIBtOmjBzv9DrdIWDtPjsHRSZXLCFcjAZN1zQSqWOHGEM',
+            preview_image_url='https://lh3.googleusercontent.com/pw/ACtC-3fmvQXV2wh96fqQjSJ5KZXRUjprXHH9zG2EVFLuExV-Uxl1sN2AQ76RIN8Cy6A0COCT4FvQg9YRzqNujWkrxwA3kgGLcAOtsupqBi0JCqx4HUQuMqR8KMJ6CRQ7FBSJ3JLHfYv04V_BFmQAMFQIrWgvsg=w958-h539'
+        )
+        
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0   
+        
+>>>>>>> parent of 76f5902 (Update app.py)
 ###############################################################################
         #user_message='音訊訊息'
     elif user_message.find('音訊訊息') != -1:         #判斷用戶使否傳來"音訊訊息"關鍵字，若為是則觸發本區段。 
