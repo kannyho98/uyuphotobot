@@ -86,7 +86,7 @@ def handle_message(event):
                             ),
                             MessageTemplateAction(
                                 label='INSTAGRAM',
-                                uri='https://www.instagram.com/uyunishino_
+                                uri='https://www.instagram.com/uyunishino_'
                             ),
                         ]
                     ),                                          
