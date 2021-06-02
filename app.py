@@ -16,11 +16,11 @@ import random
 app = Flask(__name__)
 
 
-line_bot_api = LineBotApi('')
+line_bot_api = LineBotApi('6D3uPq6/EcQM2HSo89EogoTUscTIk8+cwXsrOShGEI76TpOAZQmkpvL7pwQP0YAenayWQYWqrQ7S0sATZvqx5CdMQ9/qLcV5BN3D07H67Eei/chJB6d1IUCXxtrr4PMlYfhHxEjRQavohaJs6te17QdB04t89/1O/w1cDnyilFU=')
 
-handler = WebhookHandler('')
+handler = WebhookHandler('83de04c484d27744f7e928ba03e74c9f')
 
-line_bot_api.push_message('', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
+line_bot_api.push_message('Uda7c7cd63b657df623242b5985af6baf', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
 
 @app.route("/callback", methods=['POST'])
 def callback():
