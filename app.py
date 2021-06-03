@@ -111,7 +111,7 @@ def handle_message(event):
                             ),
                             MessageTemplateAction(
                                 label='N/A',
-                                text='工作室地圖'
+                                text='N/A'
                             ),
                         ]
                     ),                       
