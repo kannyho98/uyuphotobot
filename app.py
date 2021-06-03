@@ -80,11 +80,11 @@ def handle_message(event):
                         title='個人簡介',
                         text='請在下方選出您需要的簡介！',
                         actions=[
-                            URLTemplateAction(
+                            URITemplateAction(
                                 label='Porfolio',
                                 text='https://www.uyunishino.work'
                             ),
-                            URLTemplateAction(
+                            URITemplateAction(
                                 label='Instagram',
                                 text='http://www.instagram.com/uyunishino_'
                             ),
@@ -139,15 +139,14 @@ def handle_message(event):
         return 0   
         
 ###############################################################################
-      #user_message='商業拍影'
-    elif user_message.find('商業拍影') != -1:         #判斷用戶使否傳來"商業拍影"關鍵字，若為是則觸發本區段。 
+      #user_message='商業拍攝'
+    elif user_message.find('商業拍攝') != -1:         #判斷用戶使否傳來"商業拍攝"關鍵字，若為是則觸發本區段。 
         
         res_message = TextSendMessage(text='TWD 20000 UP')
                                       
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0  
     
-
 ###############################################################################
     elif user_message.find('單人') != -1 :         #判斷用戶使否傳來"單人"關鍵字，若為是則觸發本區段。  
         
