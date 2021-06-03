@@ -116,9 +116,25 @@ def handle_message(event):
         
 ###############################################################################
         #user_message='人像攝影'
-    elif user_message.find('人像攝影') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+    elif user_message.find('人像拍攝') != -1:         #判斷用戶使否傳來"確認介面訊息"關鍵字，若為是則觸發本區段。 
         
-        res_message = TextSendMessage(text='歡迎使用文藻E點通，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
+        res_message = TemplateSendMessage(
+            alt_text='本訊息為【人像拍攝】',
+            template=ConfirmTemplate(
+                text='人數',
+                actions=[
+                    MessageTemplateAction(
+                        label='單人',
+                        text='單人'
+                    ),
+                    MessageTemplateAction(
+                        label='雙人',
+                        text='雙人'
+                    )
+                ]
+            )
+        )
+              
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
         
