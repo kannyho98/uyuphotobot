@@ -114,7 +114,7 @@ def handle_message(event):
                         actions=[
                             MessageTemplateAction(
                                 label='Address',
-                                text='XX區鼓山區XX路'
+                                text='Address'
                             ),
                             MessageTemplateAction(
                                 label='地圖',
@@ -127,10 +127,7 @@ def handle_message(event):
         )
         
         line_bot_api.reply_message(event.reply_token,res_message)
-        return 1   
-        
-###############################################################################
-
+        return 0   
 ###############################################################################
         #user_message='人像攝影'
     elif user_message.find('人像拍攝') != -1:         #判斷用戶使否傳來"人像拍攝"關鍵字，若為是則觸發本區段。 
@@ -188,6 +185,7 @@ def handle_message(event):
         return 0  
     
 ###############################################################################
+
     elif user_message.find('下午') != -1 :         #判斷用戶使否傳來"下午"關鍵字，若為是則觸發本區段。  
         
         res_message = TextSendMessage(text='6月下午空檔 -- 6/1-12，13，18，21，31 ')
@@ -224,8 +222,8 @@ def handle_message(event):
         return 0   
         
 ###############################################################################
-        #user_message='位置訊息'
-    elif user_message.find('位置訊息') != -1:         #判斷用戶使否傳來"位置訊息"關鍵字，若為是則觸發本區段。 
+        #user_message='Address'
+    elif user_message.find('Address') != -1:         #判斷用戶使否傳來"Address"關鍵字，若為是則觸發本區段。 
         
         res_message = LocationSendMessage(
             title='西野工作室',
