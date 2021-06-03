@@ -106,7 +106,22 @@ def handle_message(event):
                             ),
                         ]
                     ),                                          
-    
+ # =============================================================================
+                    CarouselColumn(
+                        # thumbnail_image_url='',
+                        title='工作室地址',
+                        text='請在下方選出您需要的！',
+                        actions=[
+                            MessageTemplateAction(
+                                label='Address',
+                                text='XX區鼓山區XX路'
+                            ),
+                            MessageTemplateAction(
+                                label='地圖',
+                                text='工作室地圖'
+                            ),
+                        ]
+                    ),                                          
                  ]            
             )
         )
@@ -114,6 +129,30 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
         
+###############################################################################
+elif event.message.text == "工作室地圖":
+        imagemap_message = ImagemapSendMessage(
+                        base_url=''
+                        alt_text='地圖',
+                        base_size=BaseSize(height=520, width=520),
+                        actions=[
+                            URIImagemapAction(
+                                link_uri='https://goo.gl/maps/UHQxMcCMkrCMxAnc9',
+                                area=ImagemapArea(
+                                    x=174, y=65, width=707, height=416
+                                )
+                            ),
+                            MessageImagemapAction(
+                                text='hello',
+                                area=ImagemapArea(
+                                    x=520, y=0, width=520, height=520
+                                )
+                            )
+                        ]
+                    )
+        
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0   
 ###############################################################################
         #user_message='人像攝影'
     elif user_message.find('人像拍攝') != -1:         #判斷用戶使否傳來"人像拍攝"關鍵字，若為是則觸發本區段。 
@@ -212,26 +251,14 @@ def handle_message(event):
     elif user_message.find('位置訊息') != -1:         #判斷用戶使否傳來"位置訊息"關鍵字，若為是則觸發本區段。 
         
         res_message = LocationSendMessage(
-            title='文藻外語大學',
-            address='80793高雄市三民區民族一路900號',
-            latitude=22.6704067,
-            longitude=120.3191348
+            title='西野工作室',
+            address='XX區鼓山區XX路',
+            latitude=22.6632785,
+            longitude=120.2987984
         )
         
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
-        
-###############################################################################
-        #user_message='貼圖訊息'
-    elif user_message.find('貼圖訊息') != -1:         #判斷用戶使否傳來"貼圖訊息"關鍵字，若為是則觸發本區段。 
-        
-        res_message = StickerSendMessage(
-            package_id='11539',
-            sticker_id='52114116'
-        )
-        
-        line_bot_api.reply_message(event.reply_token,res_message)
-        return 0
 
 ###############################################################################
         #user_message='按鈕介面訊息'
