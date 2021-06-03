@@ -106,22 +106,7 @@ def handle_message(event):
                             ),
                         ]
                     ),                                          
- # =============================================================================
-                    CarouselColumn(
-                        # thumbnail_image_url='',
-                        title='工作室地址',
-                        text='請在下方選出您需要的！',
-                        actions=[
-                            MessageTemplateAction(
-                                label='Address',
-                                text='XX區鼓山區XX路'
-                            ),
-                            MessageTemplateAction(
-                                label='地圖',
-                                text='工作室地圖'
-                            ),
-                        ]
-                    ),                                          
+ # =============================================================================                   
                  ]            
             )
         )
