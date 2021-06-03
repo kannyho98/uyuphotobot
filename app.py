@@ -106,8 +106,8 @@ def handle_message(event):
                         text='請在下方選出您需要的！',
                         actions=[
                             MessageTemplateAction(
-                                label='Address',
-                                text='Address'
+                                label='地址',
+                                text='地址'
                             ),
                             MessageTemplateAction(
                                 label='地圖',
@@ -120,7 +120,8 @@ def handle_message(event):
         )
         
         line_bot_api.reply_message(event.reply_token,res_message)
-        return 0   
+        return 0
+    
 ###############################################################################
         #user_message='人像攝影'
     elif user_message.find('人像拍攝') != -1:         #判斷用戶使否傳來"人像拍攝"關鍵字，若為是則觸發本區段。 
@@ -215,8 +216,8 @@ def handle_message(event):
         return 0   
         
 ###############################################################################
-        #user_message='Address'
-    elif user_message.find('Address') != -1:         #判斷用戶使否傳來"Address"關鍵字，若為是則觸發本區段。 
+        #user_message='地址'
+    elif user_message.find('地址') != -1:         #判斷用戶使否傳來"地址"關鍵字，若為是則觸發本區段。 
         
         res_message = LocationSendMessage(
             title='西野工作室',
