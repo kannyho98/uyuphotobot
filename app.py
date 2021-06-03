@@ -61,8 +61,8 @@ def handle_message(event):
 #-----------------------------------------------------------------------------                    
                     CarouselColumn(
                         # thumbnail_image_url='',
-                        title='攝影服務',
-                        text='請由下方選出您需要的服務！',
+                        title='拍攝服務',
+                        text='請在下方選出您需要的服務！',
                         actions=[
                             MessageTemplateAction(
                                 label='人像拍攝',
@@ -77,32 +77,32 @@ def handle_message(event):
 # =============================================================================
                     CarouselColumn(
                         # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
+                        title='個人簡介',
+                        text='請在下方選出您需要的簡介！',
                         actions=[
                             MessageTemplateAction(
-                                label='音訊訊息',
-                                text='音訊訊息'
+                                label='Porfolio',
+                                url='https://www.uyunishino.work'
                             ),
                             MessageTemplateAction(
-                                label='位置訊息',
-                                text='位置訊息'
+                                label='Instagram',
+                                url='http://www.instagram.com/uyunishino_'
                             ),
                         ]
                     ),                                          
 # =============================================================================
                     CarouselColumn(
                         # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
+                        title='查詢空檔',
+                        text='請由下方選出您想要的時段！',
                         actions=[
                             MessageTemplateAction(
-                                label='按鈕介面訊息',
-                                text='按鈕介面訊息'
+                                label='上午',
+                                text='上午'
                             ),
                             MessageTemplateAction(
-                                label='確認介面訊息',
-                                text='確認介面訊息'
+                                label='下午/全天',
+                                text='下午/全天'
                             ),
                         ]
                     ),                                          
