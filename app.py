@@ -106,7 +106,22 @@ def handle_message(event):
                             ),
                         ]
                     ),                                          
- # =============================================================================                   
+ # =============================================================================            
+                     CarouselColumn(
+                        # thumbnail_image_url='',
+                        title='工作室地址',
+                        text='請在下方選出您需要的！',
+                        actions=[
+                            MessageTemplateAction(
+                                label='Address',
+                                text='XX區鼓山區XX路'
+                            ),
+                            MessageTemplateAction(
+                                label='地圖',
+                                text='工作室地圖'
+                            ),
+                        ]
+                    ),                       
                  ]            
             )
         )
@@ -160,7 +175,6 @@ elif event.message.text == "工作室地圖":
         )
               
         line_bot_api.reply_message(event.reply_token,res_message)
-        return 0   
         
 ###############################################################################
       #user_message='商業拍攝'
