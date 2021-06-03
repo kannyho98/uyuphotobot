@@ -52,44 +52,32 @@ def handle_message(event):
     
 
         #user_message='圖文訊息'
-    if user_message.find('各種查詢') != -1:    
+    if user_message.text('各種查詢') != -1:    
  
-       res_message = TemplateSendMessage(
-            alt_text='各種查詢',
-            template = CarouselTemplate(
-                columns=[
-#-----------------------------------------------------------------------------                    
-                   CarouselColumn(
-                        # thumbnail_image_url='',
-                        title='報價',
-                        text='請選擇你需要的服務',
-                        actions=[
-                            MessageTemplateAction(
-                                label='人像拍攝',
-                                text='人像拍攝'
-                            ),
-                            MessageTemplateAction(
-                                label='商業拍攝',
-                                text='商業拍攝'
-                            ),
-                        ]
-                    ),                                                           
-# =============================================================================
-                    CarouselColumn(
-                        # thumbnail_image_url='',
-                        title='介紹',
-                        text='請由下方選出你需要的！',
-                        actions=[
-                            MessageTemplateAction(
-                                label='簡介',
-                                text='簡介'
-                            ),
-                            MessageTemplateAction(
-                                label='INSTAGRAM',
-                                uri='https://www.instagram.com/uyunishino_'
-                            ),
-                 ]            
-            )
+       Carousel_template = TemplateSendMessage(
+        alt_text='各種查詢',
+        template=CarouselTemplate(
+        columns=[
+            CarouselColumn(
+                thumbnail_image_url='顯示在開頭的大圖片網址',
+                title='this is menu1',
+                text='description1',
+                actions=[
+                    PostbackTemplateAction(
+                        label='postback1',
+                        text='postback text1',
+                        data='action=buy&itemid=1'
+                    ),
+                    MessageTemplateAction(
+                        label='message1',
+                        text='message text1'
+                    ),
+                    URITemplateAction(
+                        label='uri1',
+                        uri='http://example.com/1'
+                    )
+                ]
+            ),
         
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
