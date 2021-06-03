@@ -72,10 +72,6 @@ def handle_message(event):
                                 label='商業拍攝',
                                 text='商業拍攝'
                             ),
-                            MessageTemplateAction(
-                                label='影片訊息',
-                                text='影片訊息'
-                            ),
                         ]
                     ),                                          
 # =============================================================================
@@ -91,10 +87,6 @@ def handle_message(event):
                             MessageTemplateAction(
                                 label='位置訊息',
                                 text='位置訊息'
-                            ),
-                            MessageTemplateAction(
-                                label='貼圖訊息',
-                                text='貼圖訊息'
                             ),
                         ]
                     ),                                          
@@ -112,33 +104,9 @@ def handle_message(event):
                                 label='確認介面訊息',
                                 text='確認介面訊息'
                             ),
-                            MessageTemplateAction(
-                                label='輪播模板訊息',
-                                text='輪播模板訊息'
-                            ),
                         ]
                     ),                                          
-# =============================================================================
-                    CarouselColumn(
-                        # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
-                        actions=[
-                            MessageTemplateAction(
-                                label='輪播圖模板訊息',
-                                text='輪播圖模板訊息'
-                            ),
-                            URITemplateAction(
-                                label='Line官方說明文件',
-                                uri='https://developers.line.biz/zh-hant/docs/messaging-api/message-types/#common-features'
-                            ),
-                            MessageTemplateAction(
-                                label='其他',
-                                text='教材尚在開發中'
-                            ),
-                        ]
-                    ),                                          
-# =============================================================================        
+    
                  ]            
             )
         )
