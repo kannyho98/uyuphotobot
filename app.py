@@ -80,11 +80,11 @@ def handle_message(event):
                         title='個人簡介',
                         text='請在下方選出您需要的簡介！',
                         actions=[
-                            MessageTemplateAction(
+                            URLTemplateAction(
                                 label='Porfolio',
                                 text='https://www.uyunishino.work'
                             ),
-                            MessageTemplateAction(
+                            URLTemplateAction(
                                 label='Instagram',
                                 text='http://www.instagram.com/uyunishino_'
                             ),
@@ -116,12 +116,12 @@ def handle_message(event):
         
 ###############################################################################
         #user_message='人像攝影'
-    elif user_message.find('人像拍攝') != -1:         #判斷用戶使否傳來"確認介面訊息"關鍵字，若為是則觸發本區段。 
+    elif user_message.find('人像拍攝') != -1:         #判斷用戶使否傳來"人像拍攝"關鍵字，若為是則觸發本區段。 
         
         res_message = TemplateSendMessage(
             alt_text='本訊息為【人像拍攝】',
             template=ConfirmTemplate(
-                text='人數',
+                text='拍攝人數',
                 actions=[
                     MessageTemplateAction(
                         label='單人',
@@ -139,12 +139,28 @@ def handle_message(event):
         return 0   
         
 ###############################################################################
-    elif user_message.find('圖片訊息') != -1 :         #判斷用戶使否傳來"圖片訊息"關鍵字，若為是則觸發本區段。  
+      #user_message='商業拍影'
+    elif user_message.find('商業拍影') != -1:         #判斷用戶使否傳來"商業拍影"關鍵字，若為是則觸發本區段。 
         
-        res_message = ImageSendMessage(
-            original_content_url='https://cdn2.ettoday.net/images/3053/3053944.jpg',
-            preview_image_url='https://cdn2.ettoday.net/images/3053/3053944.jpg'
-        )
+        res_message = TextSendMessage(text='TWD 20000 UP')
+                                      
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0  
+    
+
+###############################################################################
+    elif user_message.find('單人') != -1 :         #判斷用戶使否傳來"單人"關鍵字，若為是則觸發本區段。  
+        
+        res_message = TextSendMessage(text='TWD 3500 UP')
+                                      
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0  
+    
+###############################################################################
+    elif user_message.find('雙人') != -1 :         #判斷用戶使否傳來"雙人"關鍵字，若為是則觸發本區段。  
+        
+        res_message = TextSendMessage(text='TWD 6000 UP')
+                                      
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0  
     
