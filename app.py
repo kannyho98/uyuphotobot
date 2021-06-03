@@ -61,16 +61,16 @@ def handle_message(event):
 #-----------------------------------------------------------------------------                    
                     CarouselColumn(
                         # thumbnail_image_url='',
-                        title='圖文訊息選單',
-                        text='請由下方選出您想測試的訊息格式！',
+                        title='攝影服務',
+                        text='請由下方選出您需要的服務！',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息',
-                                text='文字訊息'
+                                label='人像拍攝',
+                                text='人像拍攝'
                             ),
                             MessageTemplateAction(
-                                label='圖片訊息',
-                                text='圖片訊息'
+                                label='商業拍攝',
+                                text='商業拍攝'
                             ),
                             MessageTemplateAction(
                                 label='影片訊息',
