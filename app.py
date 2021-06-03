@@ -164,6 +164,22 @@ def handle_message(event):
         return 0  
     
 ###############################################################################
+    elif user_message.find('上午') != -1 :         #判斷用戶使否傳來"上午"關鍵字，若為是則觸發本區段。  
+        
+        res_message = TextSendMessage(text='6月上午空檔 -- 6/1-12，13，18，21，30 ')
+                                      
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0  
+    
+###############################################################################
+    elif user_message.find('下午') != -1 :         #判斷用戶使否傳來"下午"關鍵字，若為是則觸發本區段。  
+        
+        res_message = TextSendMessage(text='6月下午空檔 -- 6/1-12，13，18，21，31 ')
+                                      
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0  
+    
+###############################################################################
         #user_message='影片訊息'
     elif user_message.find('影片訊息') != -1:         #判斷用戶使否傳來"影片訊息"關鍵字，若為是則觸發本區段。 
         
