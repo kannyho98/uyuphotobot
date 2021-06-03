@@ -110,7 +110,7 @@ def handle_message(event):
                                 text='地址'
                             ),
                             MessageTemplateAction(
-                                label='地圖',
+                                label='N/A',
                                 text='工作室地圖'
                             ),
                         ]
