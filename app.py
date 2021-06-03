@@ -130,29 +130,7 @@ def handle_message(event):
         return 0   
         
 ###############################################################################
-elif event.message.text == "工作室地圖":
-        imagemap_message = ImagemapSendMessage(
-                        base_url=''
-                        alt_text='地圖',
-                        base_size=BaseSize(height=520, width=520),
-                        actions=[
-                            URIImagemapAction(
-                                link_uri='https://goo.gl/maps/UHQxMcCMkrCMxAnc9',
-                                area=ImagemapArea(
-                                    x=174, y=65, width=707, height=416
-                                )
-                            ),
-                            MessageImagemapAction(
-                                text='hello',
-                                area=ImagemapArea(
-                                    x=520, y=0, width=520, height=520
-                                )
-                            )
-                        ]
-                    )
-        
-        line_bot_api.reply_message(event.reply_token,res_message)
-        return 0   
+
 ###############################################################################
         #user_message='人像攝影'
     elif user_message.find('人像拍攝') != -1:         #判斷用戶使否傳來"人像拍攝"關鍵字，若為是則觸發本區段。 
