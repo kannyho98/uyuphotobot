@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug 21 22:05:00 2020
-
-@author: peishuo
-"""
-
 import json
 from flask import Flask, request, abort
 from linebot import (LineBotApi, WebhookHandler)
@@ -20,7 +13,7 @@ line_bot_api = LineBotApi('6D3uPq6/EcQM2HSo89EogoTUscTIk8+cwXsrOShGEI76TpOAZQmkp
 
 handler = WebhookHandler('83de04c484d27744f7e928ba03e74c9f')
 
-line_bot_api.push_message('Uda7c7cd63b657df623242b5985af6baf', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
+line_bot_api.push_message('Uda7c7cd63b657df623242b5985af6baf', TextSendMessage(text='System Testing！！若您覺得訊息干擾到您，您可以將聊天室設為靜音，感謝！'))
 
 @app.route("/callback", methods=['POST'])
 def callback():
