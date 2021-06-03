@@ -115,8 +115,8 @@ def handle_message(event):
         return 0   
         
 ###############################################################################
-        #user_message='文字訊息'
-    elif user_message.find('文字訊息') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+        #user_message='人像攝影'
+    elif user_message.find('人像攝影') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
         
         res_message = TextSendMessage(text='歡迎使用文藻E點通，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
         line_bot_api.reply_message(event.reply_token,res_message)
@@ -230,60 +230,6 @@ def handle_message(event):
             )
         )
         
-        line_bot_api.reply_message(event.reply_token,res_message)
-
-        return 0
-    
-###############################################################################
-        #user_message='輪播模板訊息'
-    elif user_message.find('輪播模板訊息') != -1:         #判斷用戶使否傳來"輪播模板訊息"關鍵字，若為是則觸發本區段。 
-        
-        res_message = TemplateSendMessage(
-            alt_text='本訊息為【輪播模板訊息】',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.nups.ntnu.edu.tw/upfiles/univ-expo/%E5%8D%97%E9%83%A8/%E9%AB%98%E9%9B%84%E5%B8%82/%E6%8A%80%E5%B0%88%E6%A0%A1%E9%99%A2/%E6%96%87%E8%97%BB/%E6%96%87%E8%97%BB-pic04.jpg',
-                        title='測試輪播模板訊息-1',
-                        text='您可以在此輸入您要描述的文字。',
-                        actions=[
-                            MessageTemplateAction(
-                                label='測試按鈕-1',
-                                text='您剛剛點擊了【測試按鈕-1】'
-                            ),
-                            MessageTemplateAction(
-                                label='測試按鈕-2',
-                                text='您剛剛點擊了【測試按鈕-2】'
-                            ),
-                            URITemplateAction(
-                                label='網頁示範-校務資訊系統',
-                                uri='https://sso.wzu.edu.tw/Portal/login.htm'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.nups.ntnu.edu.tw/upfiles/univ-expo/%E5%8D%97%E9%83%A8/%E9%AB%98%E9%9B%84%E5%B8%82/%E6%8A%80%E5%B0%88%E6%A0%A1%E9%99%A2/%E6%96%87%E8%97%BB/%E6%96%87%E8%97%BB-pic02.jpg',
-                        title='測試輪播模板訊息-2',
-                        text='您可以在此輸入您要描述的文字。',
-                        actions=[
-                            MessageTemplateAction(
-                                label='測試按鈕-3',
-                                text='您剛剛點擊了【測試按鈕-3】'
-                            ),
-                            URITemplateAction(
-                                label='網頁示範-雲端學園',
-                                uri='https://elearning2.wzu.edu.tw/home.php'
-                            ),
-                            MessageTemplateAction(
-                                label='測試按鈕-4',
-                                text='您剛剛點擊了【測試按鈕-4】'
-                            )
-                        ]
-                    )
-                ]
-            )
-        )
-
         line_bot_api.reply_message(event.reply_token,res_message)
 
         return 0
