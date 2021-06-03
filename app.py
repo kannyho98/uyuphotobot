@@ -82,11 +82,11 @@ def handle_message(event):
                         actions=[
                             URITemplateAction(
                                 label='Porfolio',
-                                text='https://www.uyunishino.work'
+                                uri='https://www.uyunishino.work'
                             ),
                             URITemplateAction(
                                 label='Instagram',
-                                text='http://www.instagram.com/uyunishino_'
+                                uri='http://www.instagram.com/uyunishino_'
                             ),
                         ]
                     ),                                          
