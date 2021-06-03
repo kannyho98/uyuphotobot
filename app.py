@@ -127,7 +127,7 @@ def handle_message(event):
         )
         
         line_bot_api.reply_message(event.reply_token,res_message)
-        return 0   
+        return 1   
         
 ###############################################################################
 
