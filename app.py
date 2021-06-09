@@ -230,23 +230,23 @@ def handle_message(event):
         return 0   
 
 ###############################################################################
-        #user_message='按鈕介面訊息'
-    elif user_message.find('按鈕介面訊息') != -1:         #判斷用戶使否傳來"按鈕介面訊息"關鍵字，若為是則觸發本區段。 
+        #user_message='個人網站'
+    elif user_message.find('個人網站') != -1:         #判斷用戶使否傳來"個人網站"關鍵字，若為是則觸發本區段。 
         
         res_message = TemplateSendMessage(
-            alt_text='按鈕介面訊息',
+            alt_text='個人網站',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://imgs.gvm.com.tw/upload/gallery/20210126/77456_01.png',
-                title='按鈕介面訊息',
-                text='此種訊息可以設定1~4個按鈕選項，並可以設定一張1.51:1尺寸的圖片。',
+                thumbnail_image_url='https://drive.google.com/file/d/1BmNcEutIToAbyN9qJcg25a7VzPv7pTi1/view?usp=sharing',
+                title='個人網站',
+                text='/////////////',
                 actions=[
-                    MessageTemplateAction(
-                        label='測試訊息',
-                        text='您剛剛點擊了【測試訊息】'
+                    URITemplateAction(
+                        label='Instgaram',
+                        uri='https://www.instagram.com/uyunishino_'
                     ),
                     URITemplateAction(
-                        label='文藻首頁',
-                        uri='https://a001.wzu.edu.tw/'
+                        label='Porfolio',
+                        uri='https://www.uyunishino.work'
                     )
                 ]
             )
