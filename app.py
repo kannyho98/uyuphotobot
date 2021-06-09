@@ -202,14 +202,14 @@ def handle_message(event):
 # =============================================================================
     elif user_message.find('Instagram') != -1 :         #判斷用戶使否傳來"Instagram"關鍵字，若為是則觸發本區段。  
         
-        res_message = urlSendMessage(url='https://www.instagram.com/uyunishino_')
+        res_message = TextSendMessage(text='https://www.instagram.com/uyunishino_')
                                       
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0  
 # =============================================================================
     elif user_message.find('Porfolio') != -1 :         #判斷用戶使否傳來"Porfolio"關鍵字，若為是則觸發本區段。  
         
-        res_message = urlSendMessage(url='https://www.uyunishino.work')
+        res_message = TextSendMessage(text='https://www.uyunishino.work')
                                       
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0  
