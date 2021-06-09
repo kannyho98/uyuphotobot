@@ -68,22 +68,7 @@ def handle_message(event):
                         ]
                     ),                                          
 # =============================================================================
-                    CarouselColumn(
-                        # thumbnail_image_url='',
-                        title='個人簡介',
-                        text='請在下方選出您需要的簡介！',
-                        actions=[
-                            URITemplateAction(
-                                label='Porfolio',
-                                uri='https://www.uyunishino.work'
-                            ),
-                            URITemplateAction(
-                                label='Instagram',
-                                uri='http://www.instagram.com/uyunishino_'
-                            ),
-                        ]
-                    ),                                          
-# =============================================================================
+
                     CarouselColumn(
                         # thumbnail_image_url='',
                         title='查詢空檔',
@@ -192,6 +177,43 @@ def handle_message(event):
         return 0  
     
 ###############################################################################
+  elif user_message.find('個人網站') != -1:         #判斷用戶使否傳來"個人網站"關鍵字，若為是則觸發本區段。 
+        
+        res_message = TemplateSendMessage(
+            alt_text='本訊息為【個人網站】',
+            template=ConfirmTemplate(
+                text='Instagram / Porfolio？',
+                actions=[
+                    MessageTemplateAction(
+                        label='Instagram',
+                        text='Intagram'
+                    ),
+                    MessageTemplateAction(
+                        label='Porfolio',
+                        text='Porfolio'
+                    )
+                ]
+            )
+        )
+        
+        line_bot_api.reply_message(event.reply_token,res_message)
+
+        return 0                      
+# =============================================================================
+    elif user_message.find('Instagram') != -1 :         #判斷用戶使否傳來"Instagram"關鍵字，若為是則觸發本區段。  
+        
+        res_message = urlSendMessage(url='https://www.instagram.com/uyunishino_')
+                                      
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0  
+# =============================================================================
+    elif user_message.find('Porfolio') != -1 :         #判斷用戶使否傳來"Porfolio"關鍵字，若為是則觸發本區段。  
+        
+        res_message = urlSendMessage(url='https://www.uyunishino.work')
+                                      
+        line_bot_api.reply_message(event.reply_token,res_message)
+        return 0  
+# =============================================================================
         #user_message='影片訊息'
     elif user_message.find('影片訊息') != -1:         #判斷用戶使否傳來"影片訊息"關鍵字，若為是則觸發本區段。 
         
@@ -257,6 +279,7 @@ def handle_message(event):
         return 0
     
 ###############################################################################
+
         #user_message='確認介面訊息'
     elif user_message.find('確認介面訊息') != -1:         #判斷用戶使否傳來"確認介面訊息"關鍵字，若為是則觸發本區段。 
         
