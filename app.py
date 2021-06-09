@@ -225,7 +225,7 @@ def handle_message(event):
         res_message = TemplateSendMessage(
             alt_text='個人網站',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://github.com/kannyho98/uyuphotobot/blob/c1b6cf7718546c2af011a009d6403daafb012a60/000030490018.jpg',
+                thumbnail_image_url='https://github.com/kannyho98/uyuphotobot/000030490018.jpg',
                 title='個人網站',
                 text='/////////////',
                 actions=[
