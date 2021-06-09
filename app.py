@@ -68,7 +68,6 @@ def handle_message(event):
                         ]
                     ),                                          
 # =============================================================================
-
                     CarouselColumn(
                         # thumbnail_image_url='',
                         title='查詢空檔',
@@ -177,28 +176,7 @@ def handle_message(event):
         return 0  
     
 ###############################################################################
-  elif user_message.find('個人網站') != -1:         #判斷用戶使否傳來"個人網站"關鍵字，若為是則觸發本區段。 
-        
-        res_message = TemplateSendMessage(
-            alt_text='本訊息為【個人網站】',
-            template=ConfirmTemplate(
-                text='Instagram / Porfolio？',
-                actions=[
-                    MessageTemplateAction(
-                        label='Instagram',
-                        text='Intagram'
-                    ),
-                    MessageTemplateAction(
-                        label='Porfolio',
-                        text='Porfolio'
-                    )
-                ]
-            )
-        )
-        
-        line_bot_api.reply_message(event.reply_token,res_message)
-
-        return 0                      
+      
 # =============================================================================
     elif user_message.find('Instagram') != -1 :         #判斷用戶使否傳來"Instagram"關鍵字，若為是則觸發本區段。  
         
